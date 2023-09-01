@@ -31,7 +31,11 @@ function filtrarStringsDeArray(array) {
 
 // Función que recibe por parámetro un array de String y lo retorna ordenado aflabeticamente
 function sortArrayOfStrings(array) {
-  return array.sort((a, b) => a.toUpperCase() > b.toUpperCase());
+  return array.sort((a, b) => {
+    if (a.toUpperCase() === b.toUpperCase()) return 0;
+    if (a.toUpperCase() > b.toUpperCase()) return 1;
+    if (a.toUpperCase() < b.toUpperCase()) return -1;
+  });
 }
 
 // Función que recibe por parámetro un array y muestra sus elementos en pantalla
